@@ -1,4 +1,4 @@
-package com.epam.task08.main.data.parser;
+package com.epam.task08.main.parser;
 
 import com.epam.task08.main.entity.AbstractPublication;
 import com.epam.task08.main.entity.Publications;

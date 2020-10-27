@@ -6,8 +6,8 @@ import org.junit.Test;
 public class xsdValidatorTest {
 
     private static final String XSD_FILE = "src/test/resources/publications.xsd";
-    private final static String VALID_XML_FILE = "src/test/resources/publications.xml";
-    private final static String INVALID_XML_FILE = "src/test/resources/invalid.xml";
+    private static final String VALID_XML_FILE = "src/test/resources/publications.xml";
+    private static final String INVALID_XML_FILE = "src/test/resources/invalid.xml";
 
     private final xsdValidator validator = new xsdValidator(XSD_FILE);
 

@@ -9,7 +9,8 @@
             <name>Eksmo</name>
             <establishment-year>1991</establishment-year>
         </publishing-house>
-        <author>Kathy Sierra</author>
+        <author>Kathy Sierra
+    </book>
     <book id = "2">
         <title>Effective Java</title>
         <publishing-house>

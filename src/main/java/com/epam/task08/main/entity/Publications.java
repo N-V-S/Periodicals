@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(namespace = "http://www.epam.com/publications", name = "publications")
+@XmlRootElement(name = "publications", namespace = "http://www.epam.com/publications")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Publications {
     @XmlElements({

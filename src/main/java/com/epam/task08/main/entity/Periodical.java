@@ -4,17 +4,12 @@ import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Periodical", propOrder = {
-        "type",
-        "periodicity"
-})
+@XmlType(name = "Periodical")
 public class Periodical extends AbstractPublication {
 
     @XmlElement(namespace = "http://www.epam.com/publications", required = true)
-    @XmlSchemaType(name = "string")
     private PeriodicalType type;
     @XmlElement(namespace = "http://www.epam.com/publications", required = true)
-    @XmlSchemaType(name = "string")
     private Periodicity periodicity;
 
     public Periodical() {

@@ -1,4 +1,4 @@
-package com.epam.task08.main.data.parser;
+package com.epam.task08.main.parser;
 
 import com.epam.task08.main.entity.*;
 import org.xml.sax.Attributes;
@@ -21,7 +21,7 @@ public class PublicationsHandler extends DefaultHandler {
     private static final String PERIODICAL_TYPE = "type";
     private static final String PERIODICITY = "periodicity";
 
-    private List<AbstractPublication> publications;
+    private final List<AbstractPublication> publications = new ArrayList<AbstractPublication>();
     private AbstractPublication publication;
     private PublishingHouse publishingHouse;
     private String currentElement;
@@ -33,9 +33,6 @@ public class PublicationsHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         switch (qName) {
-            case PUBLICATIONS:
-                publications = new ArrayList<AbstractPublication>();
-                break;
             case BOOK:
                 publication = new Book();
                 setPublicationId(attributes);
@@ -43,6 +40,8 @@ public class PublicationsHandler extends DefaultHandler {
             case PERIODICAL:
                 publication = new Periodical();
                 setPublicationId(attributes);
+                break;
+            case PUBLICATIONS:
                 break;
             default:
                 currentElement = qName;
@@ -67,9 +66,6 @@ public class PublicationsHandler extends DefaultHandler {
             case PERIODICAL:
                 publications.add(publication);
                 break;
-            default:
-                currentElement = null;
-                break;
         }
     }
 
@@ -78,7 +74,7 @@ public class PublicationsHandler extends DefaultHandler {
         if (currentElement == null) {
             return;
         }
-        String value = String.valueOf(ch, start, length);
+        String value = new String(ch, start, length);
         Periodical periodical;
         switch (currentElement) {
             case TITLE:
@@ -111,5 +107,6 @@ public class PublicationsHandler extends DefaultHandler {
             default:
                 throw new IllegalArgumentException("Unexpected element: " + currentElement);
         }
+        currentElement = null;
     }
 }

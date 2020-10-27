@@ -2,7 +2,6 @@
 <publications xmlns="http://www.epam.com/publications"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://www.epam.com/publications publications.xsd">
-
     <book id = "1">
         <title>Head First Java</title>
         <publishing-house>
@@ -23,7 +22,7 @@
         <title>Time</title>
         <publishing-house>
             <name>Time Inc</name>
-            <establishment-year>1500</establishment-year>
+            <establishment-year>1922</establishment-year>
         </publishing-house>
         <type>MAGAZINE</type>
         <periodicity>WEEKLY</periodicity>

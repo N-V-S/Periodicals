@@ -1,6 +1,5 @@
-package com.epam.task08.main.data.parser;
+package com.epam.task08.main.parser;
 
-import com.epam.task08.main.data.DataException;
 import com.epam.task08.main.entity.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -28,16 +27,14 @@ public class DomParser implements Parser {
     private static final String PERIODICITY = "periodicity";
 
     @Override
-    public List<AbstractPublication> parse(String fileName) throws ParserException, DataException {
+    public List<AbstractPublication> parse(String fileName) throws ParserException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         Document document;
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
             document = builder.parse(fileName);
-        } catch (SAXException | ParserConfigurationException e) {
+        } catch (SAXException | ParserConfigurationException | IOException e) {
             throw new ParserException(e.getMessage(), e);
-        } catch (IOException e) {
-            throw new DataException(e.getMessage(), e);
         }
         return buildListPublications(document);
     }

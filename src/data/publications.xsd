@@ -3,7 +3,6 @@
         targetNamespace="http://www.epam.com/publications"
         xmlns:tns="http://www.epam.com/publications"
         elementFormDefault="qualified">
-
     <element name="publications">
         <complexType>
             <sequence>
@@ -11,7 +10,6 @@
             </sequence>
         </complexType>
     </element>
-
     <element name="publication" type="tns:Publication" abstract="true"/>
     <complexType name="Publication">
         <sequence>
@@ -27,7 +25,6 @@
         </sequence>
         <attribute name="id" type="positiveInteger" use="required"/>
     </complexType>
-
     <complexType name="PublishingHouse">
         <sequence>
             <element name="name">
@@ -35,21 +32,20 @@
                     <restriction base="string">
                         <pattern value="[a-zA-Z\s]+"/>
                         <minLength value="1"/>
-                        <maxLength value="20"/>
+                        <maxLength value="50"/>
                     </restriction>
                 </simpleType>
             </element>
             <element name="establishment-year">
                 <simpleType>
                     <restriction base="positiveInteger">
-                        <minInclusive value="1500"/>
+                        <minInclusive value="1534"/>
                         <maxExclusive value="2020"/>
                     </restriction>
                 </simpleType>
             </element>
         </sequence>
     </complexType>
-
     <element name="book" type="tns:Book" substitutionGroup="tns:publication"/>
     <complexType name="Book">
         <complexContent>
@@ -58,9 +54,8 @@
                     <element name="author">
                         <simpleType>
                             <restriction base="string">
-                                <pattern value="[a-zA-Z\s]+"/>
                                 <minLength value="1"/>
-                                <maxLength value="50"/>
+                                <maxLength value="150"/>
                             </restriction>
                         </simpleType>
                     </element>
@@ -68,7 +63,6 @@
             </extension>
         </complexContent>
     </complexType>
-
     <element name="periodical" type="tns:Periodical" substitutionGroup="tns:publication"/>
     <complexType name="Periodical">
         <complexContent>
@@ -97,5 +91,4 @@
             <enumeration value="QUARTERLY"/>
         </restriction>
     </simpleType>
-
 </schema>

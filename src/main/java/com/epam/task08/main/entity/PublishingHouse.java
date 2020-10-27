@@ -4,15 +4,12 @@ import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "publishingHouse", propOrder = {
-        "name",
-        "establishmentYear"
-})
+@XmlType(name = "publishingHouse")
 public final class PublishingHouse {
 
     @XmlElement(namespace = "http://www.epam.com/publications", required = true)
     private String name;
-    @XmlElement(namespace = "http://www.epam.com/publications", name = "establishment-year", required = true)
+    @XmlElement(name = "establishment-year", namespace = "http://www.epam.com/publications", required = true)
     private int establishmentYear;
 
     public PublishingHouse() {

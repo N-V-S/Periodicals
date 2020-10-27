@@ -4,10 +4,7 @@ import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {
-        "title",
-        "publishingHouse"
-})
+@XmlType(name = "AbstractPublication")
 @XmlSeeAlso({
         Book.class,
         Periodical.class
